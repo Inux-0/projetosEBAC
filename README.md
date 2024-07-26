@@ -1,3 +1,3 @@
 # projetosEBAC
-Projetos Curso EBAC \n
+Projetos Curso EBAC
 Somente projetos feitos durante o curso da EBAC.
