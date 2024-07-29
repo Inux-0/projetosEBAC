@@ -119,52 +119,64 @@ int deletar()
 
 int main()
 {
+	setlocale(LC_ALL, "Portuguese"); //definindo linguagem
+	
 	int opcao=0; //definindo variaveis
 	int laco=1;
+	char senhadigitada[10]="a";
 	
-	for(laco=1;laco=1;)
+	printf("-~- Cartório da EBAC -~- \n\n");
+	printf("Login de administrador!\n\nDigite a sua senha: ");
+	scanf("%s", senhadigitada);
+	
+	if (strcmp(senhadigitada, "admin") == 0)
 	{
+	
+	    for(laco=1;laco=1;)
+    	{
         
-		system("cls");
+			system("cls");
 		
-		setlocale(LC_ALL, "Portuguese"); //definindo linguagem
-	
-	    printf("-~- Cartório da EBAC -~- \n\n"); //inicio do menu
-	    printf("Escolha a opção: \n\n");
-	
-	    printf("~ 1 - Registrar Nomes\n");
-	    printf("~ 2 - Consultar Nomes\n");
-	    printf("~ 3 - Deletar Nomes\n"); 
-	    printf("~ 4 - Sair\n\n");
-	    printf("Opção: "); //fim do menu
-	
-	    scanf("%d", &opcao); //armazenando informações
-	
-	    system("cls");
-	
-	    switch(opcao)
-	    { //inicio da seleção
-	    	case 1:
-	    	registrar();
-			break;
+		    printf("-~- Cartório da EBAC -~- \n\n"); //inicio do menu
+		    printf("Escolha a opção: \n\n");
 			
-			case 2:
-		    consultar();
-			break;
-			
-			case 3:
-		    deletar();
-			break;
-			
-			case 4:
-			printf("Obrigado por utilizar o sistema.\n");
-			return 0;
-			break;
-			
-			default:
-			printf("NÚMERO INVÁLIDO \n");
-		    system("pause");
-		    break;
-		} //fim da seleção
+		    printf("~ 1 - Registrar Nomes\n");
+		    printf("~ 2 - Consultar Nomes\n");
+		    printf("~ 3 - Deletar Nomes\n\n"); 
+		    printf("~ 4 - Sair\n\n");
+		    printf("Opção: "); //fim do menu
+		
+		    scanf("%d", &opcao); //armazenando informações
+		
+		    system("cls");
+		
+		    switch(opcao)
+		    { //inicio da seleção
+		    	case 1:
+		    	registrar();
+				break;
+				
+				case 2:
+			    consultar();
+				break;
+				
+				case 3:
+			    deletar();
+				break;
+				
+				case 4:
+				printf("Obrigado por utilizar o sistema.\n");
+				return 0;
+				break;
+				
+				default:
+				printf("NÚMERO INVÁLIDO \n");
+			    system("pause");
+			    break;
+			} //fim da seleção
+	    }
 	} 
+	
+	else
+		printf("Senha incorreta!");
 }
